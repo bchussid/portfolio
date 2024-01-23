@@ -31,3 +31,5 @@ To learn more about Next.js, take a look at the following resources:
 ## Notes
 
 Notes for future work, todos, etc. 
+
+I.e. maybe look into pnpm/bun 
