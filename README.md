@@ -32,4 +32,6 @@ To learn more about Next.js, take a look at the following resources:
 
 Notes for future work, todos, etc. 
 
-I.e. maybe look into pnpm/bun 
+- Find better images (logo, background, etc)
+- Enable prettier (create prettier.config.js file - see tailwind docs)
+- Add animation back in - Hero.tsx (see notes)
