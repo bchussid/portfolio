@@ -7,8 +7,7 @@ import ProfilePic from "./ProfilePic";
 // add alternate title for where 'Web Developer' appears - they can change on a timer
 const Hero = () => {
   return (
-    // add in 'bg-hero' for 'bg-muted' when you find a better image
-    <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-muted bg-no-repeat bg-cover bg-bottom dark:bg-none ">
+    <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-cover bg-bottom dark:bg-none ">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           {/* text */}
@@ -28,7 +27,6 @@ const Hero = () => {
                   Contact Me <Send size={18} />{" "}
                 </Button>
               </Link>
-              {/* you can get rid of the hover style once the bg img is sorted & change btn variant back to secondary*/}
               <Button
                 variant="secondary"
                 className="gap-x-2 hover:outline shadow-lg"
@@ -46,7 +44,7 @@ const Hero = () => {
           <div className="hidden xl:flex relative">
             <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2">
               <ProfilePic
-                containerStyles="bg-hero_shape w-[500px] h-[500px] bg-no-repeat relative bg-bottom"
+                containerStyles="bg-hero_shape w-[400px] h-[400px] bg-no-repeat relative bg-bottom"
                 imgSrc="/hero/profile-pic.png"
               />
             </div>
