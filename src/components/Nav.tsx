@@ -9,6 +9,7 @@ const links = [
   { path: "/contact", name: "contact" },
 ];
 
+// ? typescript refactor?
 const Nav = ({ containerStyles, linkStyles, underlineStyles }: any) => {
   const path = usePathname();
   return (
