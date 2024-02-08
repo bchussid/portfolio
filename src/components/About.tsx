@@ -128,23 +128,53 @@ const About = () => {
           <div className="hidden xl:flex flex-1 relative">
             <ProfilePic
               containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[500px] h-[500px] bg-no-repeat relative"
-              imgSrc="/about/developer.png"
+              imgSrc="/about/about-pic.png"
             />
           </div>
           {/* tabs */}
           <div className="flex-1">
             <Tabs defaultValue="personal">
-              <TabsList>
-                <TabsTrigger value="personal">Personal</TabsTrigger>
-                <TabsTrigger value="qualifications">Qulifications</TabsTrigger>
-                <TabsTrigger value="skills">Skills</TabsTrigger>
+              <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
+                <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
+                  Personal
+                </TabsTrigger>
+                <TabsTrigger
+                  className="w-[162px] xl:w-auto"
+                  value="qualifications"
+                >
+                  Qulifications
+                </TabsTrigger>
+                <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
+                  Skills
+                </TabsTrigger>
               </TabsList>
               {/* tabs content */}
-              <div>
+              <div className="text-lg mt-12 xl:mt-8">
                 {/* personal */}
-                <TabsContent value="personal">personal info</TabsContent>
-                <TabsContent value="personal">personal info</TabsContent>
-                <TabsContent value="personal">personal info</TabsContent>
+                <TabsContent value="personal">
+                  <div className="text-center xl:text-left">
+                    <h3 className="h3 mb-4">
+                      I am a builder, or more accurately, a tinkerer by nature.
+                    </h3>
+                    <p className="subtitle max-w-xl mx-auto xl:mx-0">
+                      I love to build things, tinker with things, and understand
+                      how they work.
+                    </p>
+                    {/* icons */}
+                    <div className="grid xl:grid-cols-2 gap-4 mb-12">
+                      {infoData.map((item, index) => (
+                        <div className="flex items-center gap-x-4 mx-auto xl:mx-0" key={index}>
+                          <div className="text-primary">{item.icon}</div>
+                          <div>{item.text}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </TabsContent>
+                <TabsContent value="qualifications">
+                  qualifications info
+                </TabsContent>
+                <TabsContent value="skills">skills info</TabsContent>
               </div>
             </Tabs>
           </div>
