@@ -163,7 +163,10 @@ const About = () => {
                     {/* icons */}
                     <div className="grid xl:grid-cols-2 gap-4 mb-12">
                       {infoData.map((item, index) => (
-                        <div className="flex items-center gap-x-4 mx-auto xl:mx-0" key={index}>
+                        <div
+                          className="flex items-center gap-x-4 mx-auto xl:mx-0"
+                          key={index}
+                        >
                           <div className="text-primary">{item.icon}</div>
                           <div>{item.text}</div>
                         </div>
@@ -171,10 +174,79 @@ const About = () => {
                     </div>
                   </div>
                 </TabsContent>
+                {/* qualifications */}
                 <TabsContent value="qualifications">
-                  qualifications info
+                  <div>
+                    <h3 className="h3 mb-8 text-center xl:text-left">
+                      My Journey
+                    </h3>
+                    {/* experience & education wrapper */}
+                    <div className="">
+                      {/* experience */}
+                      <div className="flex gap-x-4 items-center text-[22px] text-primary mb-6">
+                        <Briefcase />
+                        <h4 className="capitalize font-medium">
+                          {getData(qualificationData, "experience")?.title}
+                        </h4>
+                      </div>
+                      {/* list */}
+                      <div className="flex flex-col gap-y-8 ">
+                        {getData(qualificationData, "experience").data.map(
+                          (
+                            item: {
+                              employer: string;
+                              position: string;
+                              years: string;
+                            },
+                            index: number
+                          ) => {
+                            const { employer, position, years } = item;
+                            return (
+                              <div className="flex gap-x-8 group" key={index}>
+                                <div className="h-[84px] w-[1px] bg-border relative ml-2">
+                                  <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+                                </div>
+                                <div>
+                                  <div className="font-semibold text-xl leading-none mb-2">
+                                    {employer}
+                                  </div>
+                                  <div className="text-lg leading-none text-muted-foreground mb-4">
+                                    {position}
+                                  </div>
+                                  <div className="text-base font-medium">
+                                    {years}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          }
+                        )}
+                      </div>
+                      {/* education */}
+                      <div>education</div>
+                    </div>
+                  </div>
                 </TabsContent>
-                <TabsContent value="skills">skills info</TabsContent>
+                {/* skills */}
+                <TabsContent value="skills">
+                  <div className="text-center xl:text-left">
+                    <h3 className="h3 mb-8">Tools I use</h3>
+                    <div className="mb-16">
+                      <h4 className="text-xl font-semibold mb-2">Skills</h4>
+                      <div className="border-b border-border mb-4"></div>
+                      {/* skills list */}
+                      <div>
+                        {getData(skillData, "skills")?.data.map(
+                          (item: { name: string }, index: number) => (
+                            <div className="w-2/4 text-center xl:text-left mx-auto xl:mx-0" key={index}>
+                              <div className="font-medium">{item.name}</div>
+                              </div>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
               </div>
             </Tabs>
           </div>
