@@ -12,7 +12,7 @@ import ProjectCard from "@/components/ProjectCard";
 
 const projectData = [
   {
-    image: "/work/1.png",
+    image: "/work/4.png",
     name: "Phantom Theater",
     description:
       "This is the description of the project, This is the description of the project, This is the description of the project.",
@@ -22,7 +22,7 @@ const projectData = [
     image: "/work/2.png",
     name: "This Here Portfolio",
     description:
-      "This is the description of the project - specifically this here portfolio... This is the description of the project, This is the description of the project, This is the description of the project.",
+      "This is the description of the project - specifically this here portfolio... This is the description of the project.",
     link: "/",
   },
   {
@@ -78,13 +78,19 @@ const Projects = () => {
           </Link>
         </div>
         {/* slider */}
-        <div>
-          <Carousel className="bg-pink-100">
+        <div className="max-w-[700px] xl:absolute right-32 top-0">
+          <Carousel>
             <CarouselContent>
-              {projectData.slice(0, 3).map((project, index) => (
-                <CarouselItem key={index}>hey</CarouselItem>
+              {projectData.slice(0, 4).map((project, index) => (
+                <CarouselItem key={index} className="h-[480px]">
+                  <ProjectCard project={project} />
+                </CarouselItem>
               ))}
             </CarouselContent>
+            {/* fix breakpoints so there's no horizontal scroll - next & prev need to fit in screen or have pagination */}
+
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
         </div>
       </div>
