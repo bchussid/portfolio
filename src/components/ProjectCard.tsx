@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   console.log(project.name);
   return (
     // don't like this background color
-    <Card className="bg-muted ">
+    <Card className="bg-muted overflow-hidden">
       <CardHeader className="p-0">
         <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 ">
           <Image
