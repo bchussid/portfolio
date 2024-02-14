@@ -90,6 +90,7 @@ const config = {
         about_shape_dark: "url(/about/shape-dark.svg)",
         dots_light: "url(/dots-light.svg)",
         dots_dark: "url(/dots-dark.svg)",
+        contact_illustration: "url(/contact/illustration.svg)",
       },
     },
   },
