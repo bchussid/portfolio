@@ -1,7 +1,13 @@
 "use client";
-
-import React, { useState } from "react";
-import { Tabs } from "@/components/ui/tabs";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import ProjectCard from "@/components/ProjectCard";
 
 const projectData = [
@@ -58,15 +64,34 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <section className="min-h-screen pt-12">
+    <section className="relative mb-12 xl:mb-48">
       <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
-          My Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24 xl:mb-48">
-          {projectData.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
+        {/* text */}
+        <div className="max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start">
+          <h2 className="section-title mb-4">Projects</h2>
+          <p className="subtitle mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi,
+            ratione.
+          </p>
+          <Link href="/projects">
+            <Button>More about this</Button>
+          </Link>
+        </div>
+        {/* slider */}
+        <div className="max-w-[700px] xl:absolute right-32 top-0">
+          <Carousel>
+            <CarouselContent>
+              {projectData.slice(0, 4).map((project, index) => (
+                <CarouselItem key={index} className="h-[480px]">
+                  <ProjectCard project={project} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {/* fix breakpoints so there's no horizontal scroll - next & prev need to fit in screen or have pagination */}
+
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </section>

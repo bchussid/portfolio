@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+//? font alternate: Outfit 
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 
 // components
 import Header from "@/components/Header";
