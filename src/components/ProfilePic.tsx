@@ -3,7 +3,8 @@ import Image from "next/image"
 const ProfilePic = ({containerStyles, imgSrc}: any) => {
   return (
     <div className={`${containerStyles}`}>
-      <Image src={imgSrc} fill priority alt="" />
+      {/* should be able to add custom border radius via containerStyles but it wasn't working*/}
+      <Image src={imgSrc} fill priority alt="" className="rounded-profile" />
     </div>
   )
 }
