@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Download, Send, ChevronDown } from "lucide-react";
+// import { motion } from "framer-motion";
 import Socials from "./Socials";
 import ProfilePic from "./ProfilePic";
 
 // add alternate title for where 'Web Developer' appears - they can change on a timer
+// animation has to be in a client component(?)
+const heroTitle = ["Web Developer", "Frontend Engineer", "Full Stack Engineer"];
+
 const Hero = () => {
   return (
     <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-cover bg-bottom dark:bg-none ">
@@ -12,8 +16,21 @@ const Hero = () => {
         <div className="flex justify-between gap-x-8">
           {/* text */}
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
+            {/* title - animation attempt */}
+            {/* { heroTitle.map((title, index) => (
+              <motion.div
+              className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.5 }}
+              key={index}
+              >
+                {title}
+              </motion.div>
+            ))} */}
+
             <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
-              Web Developer
+              {heroTitle[0]}
             </div>
             <h1 className="h1 mb-4">Hello, my name is Ben C.</h1>
             <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
