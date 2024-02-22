@@ -1,15 +1,14 @@
 "use client";
-
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 const icons = [
   {
-    icon: <GitHubLogoIcon />,
+    icon: <FaGithub />,
     path: "https://github.com/bchussid",
   },
   {
-    icon: <LinkedInLogoIcon />,
+    icon: <FaLinkedin />,
     path: "https://www.linkedin.com/in/ben-chussid/",
   },
 ];
