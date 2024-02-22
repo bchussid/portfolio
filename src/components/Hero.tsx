@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Download, Send, ChevronDown } from "lucide-react";
-// import { motion } from "framer-motion";
 import Socials from "./Socials";
 import ProfilePic from "./ProfilePic";
+// import TitleAnimation from "./TitleAnimation";
 
 // add alternate title for where 'Web Developer' appears - they can change on a timer
 // animation has to be in a client component(?)
-const heroTitle = ["Web Developer", "Frontend Engineer", "Full Stack Engineer"];
 
 const Hero = () => {
   return (
@@ -17,20 +16,10 @@ const Hero = () => {
           {/* text */}
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
             {/* title - animation attempt */}
-            {/* { heroTitle.map((title, index) => (
-              <motion.div
-              className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.5 }}
-              key={index}
-              >
-                {title}
-              </motion.div>
-            ))} */}
-
+            
+            {/* <TitleAnimation /> */}
             <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
-              {heroTitle[0]}
+              Web Developer
             </div>
             <h1 className="h1 mb-4">Hello, my name is Ben C.</h1>
             <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
@@ -55,13 +44,14 @@ const Hero = () => {
             <Socials
               containerStyles="flex gap-x-4 mx-auto xl:mx-0"
               iconStyles="text-foreground text-[22px] hover:text-destructive transition-all"
+              size={50}
             />
           </div>
           {/* image */}
           <div className="hidden xl:flex relative">
             <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2">
               <ProfilePic
-                containerStyles="bg-hero_shape w-[400px] h-[400px] bg-no-repeat relative bg-bottom"
+                containerStyles="bg-hero_shape dark:bg-none w-[400px] h-[400px] bg-no-repeat relative bg-bottom"
                 imgSrc="/hero/profile-pic.png"
               />
             </div>
