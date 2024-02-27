@@ -147,7 +147,7 @@ const About = () => {
           <div className="hidden xl:flex flex-1 relative">
             <ProfilePic
               containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[500px] h-[500px] bg-no-repeat relative"
-              imgSrc="/about/about-pic.png"
+              imgSrc="/about/Headshot-no-bg.png"
             />
           </div>
           {/* tabs */}
