@@ -1,16 +1,15 @@
 "use client";
-
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 const icons = [
   {
-    icon: <GitHubLogoIcon />,
-    path: "/",
+    icon: <FaGithub />,
+    path: "https://github.com/bchussid",
   },
   {
-    icon: <LinkedInLogoIcon />,
-    path: "/",
+    icon: <FaLinkedin />,
+    path: "https://www.linkedin.com/in/ben-chussid/",
   },
 ];
 
@@ -19,7 +18,7 @@ const Socials = ({ containerStyles, iconStyles }: any) => {
   return (
     <div className={`${containerStyles}`}>
       {icons.map((icon, index) => (
-        <Link key={index} href={icon.path}>
+        <Link key={index} href={icon.path} target="_blank">
           <div className={`${iconStyles}`}>{icon.icon}</div>
         </Link>
       ))}

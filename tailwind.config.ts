@@ -66,6 +66,7 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        profile: '20% 70% 10% 20% / 70% 20% 70% 80%'
       },
       keyframes: {
         "accordion-down": {

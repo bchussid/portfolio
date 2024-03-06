@@ -24,8 +24,8 @@ const Template: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       </motion.main>
       {/* completion bar */}
       <span
-        style={{ transform: `translateY(${completion - 100}%)` }}
-        className="fixed z-50 bg-primary w-1 top-0 right-0 bottom-0 transition-all duration-700"
+        style={{ transform: `translateX(${completion - 100}%)` }}
+        className="fixed z-50 bg-primary h-1 top-0 left-0 right-0 transition-all duration-700"
       ></span>
       {/* controls height of screen! */}
       {/* <div className="h-[4000px]"></div> */}

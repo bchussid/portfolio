@@ -77,6 +77,25 @@ const skillData = [
   },
 ];
 
+const skillData2 = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Tailwind",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "Firebase",
+  "Git",
+  "GitHub",
+  "Gitlab",
+  "Jira",
+  "Vue",
+  "SQL",
+];
+
 const qualificationData = [
   {
     title: "education",
@@ -128,7 +147,7 @@ const About = () => {
           <div className="hidden xl:flex flex-1 relative">
             <ProfilePic
               containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[500px] h-[500px] bg-no-repeat relative"
-              imgSrc="/about/about-pic.png"
+              imgSrc="/about/Headshot-no-bg.png"
             />
           </div>
           {/* tabs */}
@@ -222,19 +241,17 @@ const About = () => {
                           }
                         )}
                       </div>
-                      {/* education */}
-                      <div>education</div>
                     </div>
                   </div>
                 </TabsContent>
-                {/* skills */}
-                <TabsContent value="skills">
+                {/* skills - old */}
+                {/* <TabsContent value="skills">
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-8">Tools I use</h3>
                     <div className="mb-16">
                       <h4 className="text-xl font-semibold mb-2">Skills</h4>
                       <div className="border-b border-border mb-4"></div>
-                      {/* skills list */}
+                      
                       <div>
                         {getData(skillData, "skills")?.data.map(
                           (item: { name: string }, index: number) => (
@@ -244,6 +261,22 @@ const About = () => {
                           )
                         )}
                       </div>
+                    </div>
+                  </div>
+                </TabsContent> */}
+                {/* skills - new */}
+                <TabsContent value="skills">
+                  <div className="text-center xl:text-left">
+                    <h3 className="h3 mb-8">Tools I use</h3>
+                    <div className="mb-16">
+                      <h4 className="text-xl font-semibold mb-2">Skills</h4>
+                      <div className="border-b border-border mb-4"></div>
+                      {/* skills list */}
+                      <ul className="flex flex-wrap justify-center gap-2 text-base">
+                        {skillData2.map((item, index) => (
+                          <li className="border dark:border-primary border-black/[0.1] rounded-lg px-5 py-3" key={index}>{item}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </TabsContent>
