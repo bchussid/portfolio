@@ -1,5 +1,6 @@
 import Socials from "./Socials";
 const Footer = () => {
+
   return (
     <footer className="py-16 bg-secondary dark:bg-secondary">
       <div className="container mx-auto">
