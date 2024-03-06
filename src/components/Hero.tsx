@@ -10,21 +10,21 @@ import ProfilePic from "./ProfilePic";
 
 const Hero = () => {
   return (
-    <section className="py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-cover bg-bottom dark:bg-none ">
+    <section className="py-12 xl:py-24 h-[80vh] xl:pt-28">
       <div className="container mx-auto">
         <div className="flex justify-between gap-x-8">
           {/* text */}
           <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
             {/* title - animation attempt */}
-            
+
             {/* <TitleAnimation /> */}
             <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]">
               Web Developer
             </div>
-            <h1 className="h1 mb-4">Hello, my name is Ben C.</h1>
+            <h1 className="h1 mb-4">Hi, my name is Ben</h1>
             <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
-              Here&apos;s a brief overview of who I am, what I can do, skills
-              and experiences I have, and how to get in touch.
+              Here&apos;s some stuff about me. Maybe a little more of a
+              description like this. What a jerk, am I right?
             </p>
             {/* buttons */}
             <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
@@ -43,15 +43,17 @@ const Hero = () => {
             {/* socials */}
             <Socials
               containerStyles="flex gap-x-4 mx-auto xl:mx-0"
-              iconStyles="text-foreground text-[22px] hover:text-destructive transition-all"
+              iconStyles="text-foreground text-[22px] hover:text-primary transition-all"
               size={50}
             />
           </div>
           {/* image */}
           <div className="hidden xl:flex relative">
-            <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2">
+            {/* removed from below: bg-hero_shape2_light dark:bg-hero_shape2_dark */}
+            <div className=" w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2">
               <ProfilePic
-                containerStyles="bg-hero_shape dark:bg-none w-[400px] h-[400px] bg-no-repeat relative bg-bottom"
+                //? removed from below: bg-hero_shape
+                containerStyles="dark:bg-none w-[400px] h-[400px] bg-no-repeat relative bg-bottom"
                 imgSrc="/hero/profile-pic.png"
               />
             </div>
