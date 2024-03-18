@@ -19,10 +19,12 @@
     /* ? 8 89% 66% - maybe? */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 181 16% 80%;
+    /* old: 210 40% 96.1%; */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 112 21% 85%;
+    /* old: 210 40% 96.1% */
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 14 100% 96.1%;
