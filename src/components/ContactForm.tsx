@@ -23,7 +23,7 @@ const ContactForm = () => {
         <Textarea id="name" placeholder="Type Message Here..." />
         <MessageSquare className="absolute right-4 top-2" size={20} />
       </div>
-      <Button className="max-w-[200px] flex items-center gap-x-1 ">
+      <Button className="flex max-w-[200px] items-center gap-x-1 ">
         Send
         {/* <Send size={20} /> */}
         <ArrowRight size={20} />

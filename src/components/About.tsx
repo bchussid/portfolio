@@ -137,14 +137,14 @@ const About = () => {
   };
 
   return (
-    <section className="xl:h-[860px] pb-12 xl:py-24">
+    <section className="pb-12 xl:h-[860px] xl:py-24">
       <div className="container mx-auto">
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
+        <h2 className="section-title mx-auto mb-8 text-center xl:mb-16">
           About Me
         </h2>
         <div className="flex flex-col xl:flex-row">
           {/* image */}
-          <div className="hidden xl:flex flex-1 relative">
+          <div className="relative hidden flex-1 xl:flex">
             <ProfilePic
               containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[500px] h-[500px] bg-no-repeat relative"
               imgSrc="/about/Headshot-no-bg.png"
@@ -153,7 +153,7 @@ const About = () => {
           {/* tabs */}
           <div className="flex-1">
             <Tabs defaultValue="personal">
-              <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
+              <TabsList className="grid w-full dark:border-none xl:max-w-[520px] xl:grid-cols-3 xl:border">
                 <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
                   Personal
                 </TabsTrigger>
@@ -168,22 +168,22 @@ const About = () => {
                 </TabsTrigger>
               </TabsList>
               {/* tabs content */}
-              <div className="text-lg mt-12 xl:mt-8">
+              <div className="mt-12 text-lg xl:mt-8">
                 {/* personal */}
                 <TabsContent value="personal">
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">
                       I am a builder, or more accurately, a tinkerer by nature.
                     </h3>
-                    <p className="subtitle max-w-xl mx-auto xl:mx-0">
+                    <p className="subtitle mx-auto max-w-xl xl:mx-0">
                       I love to build things, tinker with things, and understand
                       how they work.
                     </p>
                     {/* icons */}
-                    <div className="grid xl:grid-cols-2 gap-4 mb-12">
+                    <div className="mb-12 grid gap-4 xl:grid-cols-2">
                       {infoData.map((item, index) => (
                         <div
-                          className="flex items-center gap-x-4 mx-auto xl:mx-0"
+                          className="mx-auto flex items-center gap-x-4 xl:mx-0"
                           key={index}
                         >
                           <div className="text-primary">{item.icon}</div>
@@ -202,9 +202,9 @@ const About = () => {
                     {/* experience & education wrapper */}
                     <div className="">
                       {/* experience */}
-                      <div className="flex gap-x-4 items-center text-[22px] text-primary mb-6">
+                      <div className="mb-6 flex items-center gap-x-4 text-[22px] text-primary">
                         <Briefcase />
-                        <h4 className="capitalize font-medium">
+                        <h4 className="font-medium capitalize">
                           {getData(qualificationData, "experience")?.title}
                         </h4>
                       </div>
@@ -217,19 +217,19 @@ const About = () => {
                               position: string;
                               years: string;
                             },
-                            index: number
+                            index: number,
                           ) => {
                             const { employer, position, years } = item;
                             return (
-                              <div className="flex gap-x-8 group" key={index}>
-                                <div className="h-[84px] w-[1px] bg-border relative ml-2">
-                                  <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+                              <div className="group flex gap-x-8" key={index}>
+                                <div className="relative ml-2 h-[84px] w-[1px] bg-border">
+                                  <div className="absolute -left-[5px] h-[11px] w-[11px] rounded-full bg-primary transition-all duration-500 group-hover:translate-y-[84px]"></div>
                                 </div>
                                 <div>
-                                  <div className="font-semibold text-xl leading-none mb-2">
+                                  <div className="mb-2 text-xl font-semibold leading-none">
                                     {employer}
                                   </div>
-                                  <div className="text-lg leading-none text-muted-foreground mb-4">
+                                  <div className="mb-4 text-lg leading-none text-muted-foreground">
                                     {position}
                                   </div>
                                   <div className="text-base font-medium">
@@ -238,7 +238,7 @@ const About = () => {
                                 </div>
                               </div>
                             );
-                          }
+                          },
                         )}
                       </div>
                     </div>
@@ -269,12 +269,17 @@ const About = () => {
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-8">Tools I use</h3>
                     <div className="mb-16">
-                      <h4 className="text-xl font-semibold mb-2">Skills</h4>
-                      <div className="border-b border-border mb-4"></div>
+                      <h4 className="mb-2 text-xl font-semibold">Skills</h4>
+                      <div className="mb-4 border-b border-border"></div>
                       {/* skills list */}
                       <ul className="flex flex-wrap justify-center gap-2 text-base">
                         {skillData2.map((item, index) => (
-                          <li className="border dark:border-primary border-black/[0.1] rounded-lg px-5 py-3" key={index}>{item}</li>
+                          <li
+                            className="rounded-lg border border-black/[0.1] px-5 py-3 dark:border-primary"
+                            key={index}
+                          >
+                            {item}
+                          </li>
                         ))}
                       </ul>
                     </div>
